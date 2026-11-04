@@ -1,0 +1,294 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRK PROJECTS | Admin Dashboard</title>
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body class="dashboard-body">
+
+<div class="dashboard-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <h2>DRK <span>PROJECTS</span></h2>
+            <p>ADMIN PANEL</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-link active">▦ Dashboard</a>
+            <a href="#projects-section" class="nav-link">▣ Manage Projects</a>
+            <a href="#add-project-section" class="nav-link">＋ Add Project</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button id="logoutButton" class="logout-button">
+                ↪ Logout
+            </button>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="dashboard-main">
+
+        <header class="dashboard-header">
+            <div>
+                <p class="dashboard-eyebrow">ADMINISTRATION</p>
+                <h1>Dashboard Overview</h1>
+                <p class="dashboard-subtitle">
+                    Manage your DRK PROJECTS platform.
+                </p>
+            </div>
+
+            <div class="admin-profile">
+                <div class="profile-avatar">A</div>
+                <div>
+                    <strong>Administrator</strong>
+                    <small>DRK Projects</small>
+                </div>
+            </div>
+        </header>
+
+        <!-- STATISTICS -->
+        <section class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-icon">▣</div>
+                <p>Total Projects</p>
+                <h2 id="totalProjects">0</h2>
+                <small>All projects in database</small>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">✓</div>
+                <p>Published Projects</p>
+                <h2 id="publishedProjects">0</h2>
+                <small>Visible to customers</small>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">◷</div>
+                <p>Draft Projects</p>
+                <h2 id="draftProjects">0</h2>
+                <small>Not yet published</small>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">✉</div>
+                <p>New Enquiries</p>
+                <h2 id="newEnquiries">0</h2>
+                <small>Pending enquiries</small>
+            </div>
+
+        </section>
+
+        <!-- QUICK ACTIONS -->
+        <section class="dashboard-section">
+            <div class="section-heading">
+                <div>
+                    <h2>Quick Actions</h2>
+                    <p>Manage your platform easily.</p>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+
+                <a href="#add-project-section" class="action-card">
+                    <span>＋</span>
+                    <div>
+                        <h3>Add New Project</h3>
+                        <p>Upload a new project to your website.</p>
+                    </div>
+                </a>
+
+                <a href="#projects-section" class="action-card">
+                    <span>▤</span>
+                    <div>
+                        <h3>Manage Projects</h3>
+                        <p>Edit prices and project details.</p>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- ADD / EDIT PROJECT -->
+        <section class="dashboard-section" id="add-project-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2 id="formTitle">Add New Project</h2>
+                    <p>Add your project details and upload its image.</p>
+                </div>
+            </div>
+
+            <form id="projectForm" class="project-form">
+
+                <input type="hidden" id="projectId">
+
+                <div class="form-group">
+                    <label for="projectName">Project Name *</label>
+                    <input
+                        type="text"
+                        id="projectName"
+                        placeholder="Example: AI Based Fraud Detection"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="projectDescription">Project Description *</label>
+                    <textarea
+                        id="projectDescription"
+                        rows="5"
+                        placeholder="Explain what your project does..."
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="projectCategory">Category *</label>
+                        <select id="projectCategory" required>
+                            <option value="">Select Category</option>
+                            <option value="AI">Artificial Intelligence</option>
+                            <option value="ML">Machine Learning</option>
+                            <option value="DL">Deep Learning</option>
+                            <option value="NLP">Natural Language Processing</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="projectPrice">Project Price (₹) *</label>
+                        <input
+                            type="number"
+                            id="projectPrice"
+                            min="0"
+                            step="0.01"
+                            placeholder="2499"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="projectTechnologies">
+                        Technologies Used *
+                    </label>
+                    <input
+                        type="text"
+                        id="projectTechnologies"
+                        placeholder="Python, TensorFlow, CNN, OpenCV"
+                        required
+                    >
+                    <small>Separate technologies using commas.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="projectImage">Project Image *</label>
+                    <input
+                        type="file"
+                        id="projectImage"
+                        accept="image/png,image/jpeg,image/webp"
+                    >
+                    <small>JPG, PNG or WEBP. Maximum size: 5 MB.</small>
+                    <div id="imagePreviewContainer" hidden>
+                        <img
+                            id="imagePreview"
+                            alt="Project image preview"
+                            style="max-width:220px;max-height:160px;object-fit:cover;border-radius:10px;margin-top:12px;"
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="projectDemo">Demo Video URL</label>
+                    <input
+                        type="url"
+                        id="projectDemo"
+                        placeholder="https://www.youtube.com/watch?v=..."
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="projectStatus">Project Status *</label>
+                    <select id="projectStatus" required>
+                        <option value="draft">Save as Draft</option>
+                        <option value="published">Publish Project</option>
+                    </select>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" id="saveProjectButton">
+                        Save Project
+                    </button>
+
+                    <button type="button" id="cancelEditButton" hidden>
+                        Cancel Editing
+                    </button>
+                </div>
+
+                <p id="projectFormMessage" role="status"></p>
+
+            </form>
+
+        </section>
+
+        <!-- MANAGE PROJECTS -->
+        <section class="dashboard-section" id="projects-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Manage Projects</h2>
+                    <p>View, edit, publish or delete your projects.</p>
+                </div>
+
+                <button
+                    type="button"
+                    id="refreshProjectsButton"
+                    class="refresh-button"
+                >
+                    ↻ Refresh
+                </button>
+            </div>
+
+            <div class="projects-toolbar">
+                <input
+                    type="search"
+                    id="projectSearch"
+                    placeholder="Search projects..."
+                >
+
+                <select id="projectFilter">
+                    <option value="all">All Projects</option>
+                    <option value="published">Published</option>
+                    <option value="draft">Drafts</option>
+                </select>
+            </div>
+
+            <div id="projectsList" class="admin-projects-list">
+                <div class="empty-panel">
+                    <h3>Loading projects...</h3>
+                    <p>Your projects will appear here.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <footer class="dashboard-footer">
+            © 2026 DRK PROJECTS. Admin Panel.
+        </footer>
+
+    </main>
+</div>
+
+<script type="module" src="../js/dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Explore ready-made AI, Machine Learning, Deep Learning and NLP projects at DRK Projects.">
+
+    <title>Our Projects | DRK Projects</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+
+        <a href="../index.html" class="logo">
+            DRK<span>PROJECTS.</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <a href="contact.html" class="nav-button">
+            Get In Touch <span>↗</span>
+        </a>
+
+    </header>
+
+
+    <main>
+
+        <!-- PROJECTS HERO -->
+        <section class="projects-hero">
+
+            <span class="section-tag">OUR PROJECT COLLECTION</span>
+
+            <h1>
+                Explore Our
+                <span>Projects.</span>
+            </h1>
+
+            <p>
+                Discover innovative technology projects built using
+                Artificial Intelligence, Machine Learning,
+                Deep Learning and modern development tools.
+            </p>
+
+            <div class="project-count">
+                <span class="count-dot"></span>
+                EXPLORE OUR READY-MADE SOLUTIONS
+            </div>
+
+        </section>
+
+
+        <!-- PROJECTS CONTAINER -->
+        <section class="projects-container">
+
+            <!-- FILTERS -->
+            <div class="projects-toolbar">
+
+                <div class="filter-buttons">
+
+                    <button class="filter-btn active" data-filter="all">
+                        All Projects
+                    </button>
+
+                    <button class="filter-btn" data-filter="ai">
+                        AI
+                    </button>
+
+                    <button class="filter-btn" data-filter="ml">
+                        Machine Learning
+                    </button>
+
+                    <button class="filter-btn" data-filter="dl">
+                        Deep Learning
+                    </button>
+
+                    <button class="filter-btn" data-filter="nlp">
+                        NLP
+                    </button>
+
+                </div>
+
+                <div class="project-search">
+                    <span>⌕</span>
+
+                    <input
+                        type="text"
+                        id="projectSearch"
+                        placeholder="Search projects..."
+                    >
+                </div>
+
+            </div>
+
+
+            <!-- LOADING MESSAGE -->
+            <div id="projectsLoading" class="no-projects">
+                <h3>Loading Projects...</h3>
+                <p>Please wait while we explore our collection.</p>
+            </div>
+
+
+            <!-- ERROR MESSAGE -->
+            <div id="projectsError" class="no-projects" hidden>
+                <h3>Unable to Load Projects</h3>
+                <p id="projectsErrorMessage">
+                    Please refresh the page and try again.
+                </p>
+            </div>
+
+
+            <!-- DYNAMIC PROJECT CARDS -->
+            <div
+                class="projects-grid"
+                id="projectsGrid"
+                hidden
+            >
+            </div>
+
+
+            <!-- EMPTY SEARCH RESULT -->
+            <div class="no-projects" id="noProjects" hidden>
+
+                <h3>No Projects Found</h3>
+
+                <p>
+                    Try another search term or category.
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- BOTTOM CTA -->
+        <section class="project-bottom-cta">
+
+            <span class="section-tag">
+                LOOKING FOR SOMETHING ELSE?
+            </span>
+
+            <h2>
+                Have a project
+                <span>in mind?</span>
+            </h2>
+
+            <p>
+                Contact us to discuss your requirements
+                and explore available solutions.
+            </p>
+
+            <a href="contact.html" class="primary-button">
+                Contact Our Team →
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <a href="../index.html" class="logo">
+            DRK<span>PROJECTS.</span>
+        </a>
+
+        <p>
+            Building intelligent solutions through technology.
+        </p>
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 DRK Projects. All rights reserved.
+            </span>
+
+            <span>AI · ML · DL</span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- PROJECT JAVASCRIPT -->
+    <script type="module" src="../js/projects.js"></script>
+
+</body>
+</html>

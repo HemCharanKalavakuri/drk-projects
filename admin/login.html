@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Login | DRK Projects</title>
+
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+
+    <main class="login-page">
+
+        <section class="login-card">
+
+            <a href="../index.html" class="brand">
+                DRK<span>PROJECTS.</span>
+            </a>
+
+            <div class="login-heading">
+                <span class="login-tag">PRIVATE ADMIN AREA</span>
+
+                <h1>Welcome Back</h1>
+
+                <p>
+                    Sign in to manage your projects and enquiries.
+                </p>
+            </div>
+
+
+            <form id="loginForm">
+
+                <div class="form-group">
+
+                    <label for="email">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your admin email"
+                        autocomplete="username"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="password">Password</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                </div>
+
+
+                <button type="submit" id="loginButton">
+                    Sign In to Dashboard →
+                </button>
+
+
+                <p id="loginMessage" role="status"></p>
+
+            </form>
+
+
+            <div class="login-footer">
+                <a href="../index.html">← Back to DRK Projects</a>
+                <p>Authorized administrators only.</p>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script type="module" src="../js/admin.js"></script>
+
+</body>
+</html>
